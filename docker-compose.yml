@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vue-js-in-docker
+    restart: unless-stopped
+    ports: 
+      - "127.0.0.1:8080:80"
+    networks:
+      - vue-js-in-docker
+
+networks:
+  vue-js-in-docker:
+    driver: bridge
