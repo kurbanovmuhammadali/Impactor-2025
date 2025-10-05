@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* AI Chat namespace */
+  .ai-chat {
+    --ai-background: 240 10% 3.9%;
+    --ai-foreground: 0 0% 98%;
+
+    --ai-card: 240 10% 7%;
+    --ai-card-foreground: 0 0% 98%;
+
+    --ai-primary: 195 100% 50%;
+    --ai-primary-foreground: 240 10% 3.9%;
+
+    --ai-secondary: 270 95% 65%;
+    --ai-secondary-foreground: 0 0% 98%;
+
+    --ai-muted: 240 5% 15%;
+    --ai-muted-foreground: 240 5% 64.9%;
+
+    --ai-gradient-cosmic: linear-gradient(135deg, hsl(var(--ai-background)), hsl(270 50% 10%));
+    --ai-gradient-primary: linear-gradient(135deg, hsl(var(--ai-primary)), hsl(var(--ai-secondary)));
+
+    --ai-shadow-glow: 0 0 30px hsl(var(--ai-primary) / 0.3);
+  }
+}
+
+@layer utilities {
+  /* Scoped styles using AI variables */
+  .ai-chat {
+    background-color: hsl(var(--ai-background));
+    color: hsl(var(--ai-foreground));
+  }
+
+  .ai-chat .bg-card {
+    background-color: hsl(var(--ai-card));
+    color: hsl(var(--ai-card-foreground));
+  }
+
+  .ai-chat .bg-gradient-primary {
+    background: var(--ai-gradient-primary);
+    color: hsl(var(--ai-primary-foreground));
+  }
+
+  .ai-chat .shadow-glow {
+    box-shadow: var(--ai-shadow-glow);
+  }
+
+  .ai-chat input {
+    background-color: hsl(var(--ai-background));
+    color: hsl(var(--ai-foreground));
+    border-color: hsl(var(--ai-muted));
+  }
+
+  .ai-chat button {
+    border-color: hsl(var(--ai-primary));
+    color: hsl(var(--ai-primary-foreground));
+  }
+}
