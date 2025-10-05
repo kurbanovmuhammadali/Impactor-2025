@@ -22,7 +22,7 @@ RUN mkdir -p /var/run/nginx \
     && chown -R appuser:appgroup /var/run/nginx
 RUN chmod -R 755 /var/cache/nginx /var/run/nginx
 
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 COPY nginx/domain.conf /etc/nginx/conf.d/default.conf
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
